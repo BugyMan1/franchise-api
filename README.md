@@ -8,8 +8,8 @@ API REST para la gestión de franquicias, sucursales y productos, desarrollada c
 - [Tecnologías](#-tecnologías)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación y Ejecución](#-instalación-y-ejecución)
-  - [Opción 1: Ejecución Local con Gradle](#opción-1-ejecución-local-con-gradle)
-  - [Opción 2: Ejecución con Docker Compose](#opción-2-ejecución-con-docker-compose-recomendado)
+  - [Opción 1: Ejecución con Docker Compose (Recomendado)](#opción-1-ejecución-con-docker-compose-recomendado)
+  - [Opción 2: Ejecución Local con Gradle](#opción-2-ejecución-local-con-gradle)
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [API Endpoints](#-api-endpoints)
 - [Ejemplos de Uso](#-ejemplos-de-uso)
@@ -59,7 +59,47 @@ API REST para la gestión de franquicias, sucursales y productos, desarrollada c
 
 ## 🔧 Instalación y Ejecución
 
-### Opción 1: Ejecución Local con Gradle
+### Opción 1: Ejecución con Docker Compose (Recomendado)
+
+Esta es la forma más sencilla de ejecutar la aplicación con todas sus dependencias.
+
+#### 1. Clonar el repositorio
+```bash
+git clone https://github.com/BugyMan1/franchise-api.git
+cd franchise-api
+```
+
+#### 2. Iniciar los contenedores
+```bash
+docker-compose up --build
+```
+
+Este comando:
+- Construye la imagen Docker de la aplicación con Gradle
+- Levanta un contenedor de MongoDB
+- Levanta la aplicación en el puerto 8080
+- Configura la red entre los contenedores
+
+#### 3. Verificar que todo está funcionando
+```bash
+# Ver los logs
+docker-compose logs -f
+
+# Verificar que los contenedores están corriendo
+docker-compose ps
+```
+
+#### 4. Detener los contenedores
+```bash
+docker-compose down
+
+# Para eliminar también los volúmenes (datos de MongoDB)
+docker-compose down -v
+```
+
+La API estará disponible en: `http://localhost:8080`
+
+### Opción 2: Ejecución Local con Gradle
 
 #### 1. Clonar el repositorio
 ```bash
@@ -97,46 +137,6 @@ gradle build
 
 # O con Gradle instalado
 gradle bootRun
-```
-
-La API estará disponible en: `http://localhost:8080`
-
-### Opción 2: Ejecución con Docker Compose (Recomendado)
-
-Esta es la forma más sencilla de ejecutar la aplicación con todas sus dependencias.
-
-#### 1. Clonar el repositorio
-```bash
-git clone https://github.com/BugyMan1/franchise-api.git
-cd franchise-api
-```
-
-#### 2. Iniciar los contenedores
-```bash
-docker-compose up --build
-```
-
-Este comando:
-- Construye la imagen Docker de la aplicación con Gradle
-- Levanta un contenedor de MongoDB
-- Levanta la aplicación en el puerto 8080
-- Configura la red entre los contenedores
-
-#### 3. Verificar que todo está funcionando
-```bash
-# Ver los logs
-docker-compose logs -f
-
-# Verificar que los contenedores están corriendo
-docker-compose ps
-```
-
-#### 4. Detener los contenedores
-```bash
-docker-compose down
-
-# Para eliminar también los volúmenes (datos de MongoDB)
-docker-compose down -v
 ```
 
 La API estará disponible en: `http://localhost:8080`
