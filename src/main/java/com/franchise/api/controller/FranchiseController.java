@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/api/franchises")
 @RequiredArgsConstructor
-@Tag(name = "Franchise Management", description = "API para gestionar franquicias, sucursales y productos")
+@Tag(name = "Franchise Management", description = "API to manage franchises, branches and products")
 public class FranchiseController {
 
     private final FranchiseService franchiseService;
