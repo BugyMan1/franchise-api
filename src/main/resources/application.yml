@@ -6,11 +6,7 @@ spring:
     name: franchise-api
   data:
     mongodb:
-      host: ${MONGODB_HOST:localhost}
-      port: ${MONGODB_PORT:27017}
-      database: ${MONGODB_DATABASE:franchise_db}
-      username: ${MONGODB_USERNAME:}
-      password: ${MONGODB_PASSWORD:}
+      uri: ${MONGODB_URI:mongodb://localhost:27017/franchise_db}
 
 springdoc:
   api-docs:
