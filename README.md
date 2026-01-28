@@ -20,7 +20,7 @@ API REST para la gestión de franquicias, sucursales y productos, desarrollada c
 ## 🚀 Características
 
 - ✅ **Criterios de Aceptación Implementados:**
-  - Desarrollado en Spring Boot 3.2.1
+  - Desarrollado en Spring Boot 3.4.1
   - Endpoint para agregar nueva franquicia
   - Endpoint para agregar nueva sucursal a franquicia
   - Endpoint para agregar nuevo producto a sucursal

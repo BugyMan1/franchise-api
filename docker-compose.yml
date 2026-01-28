@@ -29,10 +29,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      MONGODB_HOST: mongodb
-      MONGODB_PORT: 27017
-      MONGODB_DATABASE: franchise_db
-      SPRING_PROFILES_ACTIVE: prod
+      - MONGODB_URI=mongodb://mongodb:27017/franchise_db
     depends_on:
       mongodb:
         condition: service_healthy
