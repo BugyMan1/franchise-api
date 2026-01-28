@@ -1,4 +1,4 @@
-# Franchise Management API (Gradle Version)
+# Franchise Management API
 
 API REST para la gestión de franquicias, sucursales y productos, desarrollada con Spring Boot WebFlux y MongoDB.
 
