@@ -1,0 +1,246 @@
+{
+  "info": {
+    "name": "Franchise API",
+    "description": "Colección de requests para probar la API de gestión de franquicias",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Franchises",
+      "item": [
+        {
+          "name": "Create Franchise",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"McDonald's\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises"]
+            }
+          }
+        },
+        {
+          "name": "Get All Franchises",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises"]
+            }
+          }
+        },
+        {
+          "name": "Get Franchise By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Franchise Name",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"McDonald's Updated\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/name",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "name"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Branches",
+      "item": [
+        {
+          "name": "Add Branch to Franchise",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Centro\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches"]
+            }
+          }
+        },
+        {
+          "name": "Update Branch Name",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Centro Actualizada\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches/{{branchId}}/name",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches", "{{branchId}}", "name"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Add Product to Branch",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Big Mac\",\n  \"stock\": 150\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches/{{branchId}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches", "{{branchId}}", "products"]
+            }
+          }
+        },
+        {
+          "name": "Update Product Stock",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock\": 200\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches/{{branchId}}/products/{{productId}}/stock",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches", "{{branchId}}", "products", "{{productId}}", "stock"]
+            }
+          }
+        },
+        {
+          "name": "Update Product Name",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Big Mac Deluxe\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches/{{branchId}}/products/{{productId}}/name",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches", "{{branchId}}", "products", "{{productId}}", "name"]
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/branches/{{branchId}}/products/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "branches", "{{branchId}}", "products", "{{productId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Get Top Products by Branch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/franchises/{{franchiseId}}/top-products",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "franchises", "{{franchiseId}}", "top-products"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "franchiseId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "branchId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
